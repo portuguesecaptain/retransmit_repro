@@ -1,0 +1,25 @@
+services:
+  server:
+    cap_add:
+      - NET_ADMIN
+    build: ./Docker/server
+    ports:
+      - "55001:55001"
+    networks:
+      - retransmit-net
+
+  client:
+    cap_add:
+      - NET_ADMIN
+    build: ./Docker/client
+    networks:
+      - retransmit-net
+    depends_on:
+      - server
+
+networks:
+  retransmit-net:
+    driver: bridge
+    driver_opts:
+      com.docker.network.driver.mtu: "1400"
+

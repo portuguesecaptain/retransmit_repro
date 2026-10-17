@@ -1,0 +1,9 @@
+**/.venv
+**/.dockerignore
+**/.gitignore
+**/bin
+**/docker-compose*
+**/compose.y*ml
+**/Dockerfile*
+**/*.snp
+**/*.pcap
